@@ -8,7 +8,7 @@ services:
         networks: 
             - backend 
         environment:
-            - VITE_REMOTE=server
+            - VITE_REMOTE=localhost
         depends_on:
             - server
         extra_hosts:
