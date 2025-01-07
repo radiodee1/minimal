@@ -5,10 +5,11 @@ services:
         build: client/.
         ports:
             - "5173:5173"
+            - "80:80"
+            - "8008:8008"
         networks: 
             - backend 
-        environment:
-            - VITE_REMOTE=localhost
+        env_file: "./env/client.env"
         depends_on:
             - server
         extra_hosts:
@@ -24,19 +25,6 @@ services:
             - HOST=server # not used
         volumes:
             - /home:/home
-    nginx:
-        build: nginx/.
-        ports:
-            - "80:80"
-            - "8008:8008"
-        networks:
-            - backend
-        depends_on:
-            - server
-            - client
-        extra_hosts:
-            - "host.docker.internal:host-gateway"
-
 
 
 volumes:
