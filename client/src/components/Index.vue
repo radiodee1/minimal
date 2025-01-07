@@ -1,6 +1,6 @@
 <script >
 
-const host =  import.meta.env.VITE_REMOTE;
+const host =  import.meta.env.VITE_REMOTE || 'localhost';
 
 console.log(host);
 
