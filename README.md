@@ -36,6 +36,8 @@ docker logs -f nginx 1>/dev/null
 Here I'm testing out a nvim markdown editor.
 
 ```python
+
 def some_fn(s):
     print(s)
+
 ```
